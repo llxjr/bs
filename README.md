@@ -19,7 +19,7 @@
 
 ##### 项目地址
 
-  <a href='http://perfect-ssm.hanshuai.xin'>perfect-ssm</a> <br /> 
+  <a href='http://localhost:8080/perfect-ssm/login'>perfect-ssm</a> <br /> 
   登录名：admin <br /> 
   密码：123456
 
@@ -67,6 +67,5 @@
   2017-07 管理员模块接口RESTful改造。 <br /> 
   2017-07 代码整理。 <br /> 
   2017-08 架构及目录结构整理，Wiki文档编辑。<br/>
-  2017-08 ```http://perfect-ssm.hanshuai.xin```上线。<br/>
   2018-02 整合Redis<br/>
 

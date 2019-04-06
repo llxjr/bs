@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssm.promotion.core.dao.ChapterDao">
+    <sql id="Base_Column_List">
+    	id, `category_id` as categoryId,`tag`,`chapter_name` as chapterName,`course_id` as courseId
+    	,`course_name` as courseName,`has_video` as hasVideo,`has_child` as hsaChild,`parent_id` as parentId,`is_free` as isFree
+    	,`t_order` as tOrder,`create_time` as creatTime,`create_by` as createBy ,`update_time` as updateTime
+    	,`update_by` as updateBy,`function_type` as functionType
+    </sql>
+    
+    <resultMap type="Chapter" id="ChapterResult">
+        <result property="id" column="id"/>
+        <result property="categoryId" column="category_id"/>
+        <result property="tag" column="tag"/>
+        <result property="courseId" column="course_id"/>
+        <result property="chapterName" column="chapter_name"/>
+        <result property="hasVideo" column="has_video"/>
+        <result property="hasChild" column="has_child"/>
+        <result property="parentId" column="parent_id"/>
+        <result property="isFree" column="is_free"/>
+        <result property="tOrder" column="t_order"/>
+        <result property="createTime" column="create_time" />
+        <result property="createBy" column="create_by"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="updateBy" column="update_by"/>
+        <result property="functionType" column="function_type"/>
+    </resultMap>
+	
+	
+	<select id="getChapterByName" parameterType="java.lang.String" resultType="Chapter">
+		SELECT
+		<include refid="Base_Column_List" />
+		FROM qf_chapter
+		WHERE chapter_name = #{0}
+		
+	</select>
+    
+    <select id="findById" parameterType="int" resultMap="ChapterResult">
+    	select 
+    	<include refid="Base_Column_List" />
+		FROM qf_chapter
+		WHERE id=#{0}
+    </select>
+    <select id="findByCourseId" parameterType="int" resultMap="ChapterResult">
+    	select 
+		<include refid="Base_Column_List" />
+		FROM qf_chapter
+		WHERE course_id=#{0}
+    </select>
+    
+    
+    <select id="findChapter" parameterType="Map" resultMap="ChapterResult">
+        select id,category_id,course_id,tag,chapter_name,has_video,has_child,parent_id,is_free,
+        t_order,create_time,create_by,update_time,update_by,function_type from qf_chapter
+        <where>
+            <if test="ChapterName!=null and ChapterName!='' ">
+                and chapter_name like #{chapterName}
+            </if>
+           
+        </where>
+        
+    </select>
+    <select id="findChapterByCourseName" parameterType="Map" resultMap="ChapterResult">
+    	select 
+        <include refid="Base_Column_List" />
+        from qf_chapter
+        <where>
+            <if test="courseName!=null and courseName!='' ">
+                and course_name like #{courseName}
+            </if>
+           
+        </where>
+        
+    </select>
+     <select id="findAllChapter" resultType="com.ssm.promotion.core.entity.Chapter">
+		 select 
+		 id, category_id,course_id,tag,chapter_name,has_video,has_child,parent_id,is_free,
+       	 t_order,create_time,create_by,update_time,update_by,function_type 
+        from qf_chapter
+	</select>
+
+    <select id="getTotalChapter" parameterType="Map" resultType="Long">
+        select count(*) from qf_chapter
+        <where>
+            <if test="chapterName!=null and chapterName!='' ">
+                and chapter_name like #{chapterName}
+            </if>
+        </where>
+    </select>
+
+    <insert id="addChapter" parameterType="Chapter">
+        insert into qf_chapter(category_id,course_id,tag,course_name,chapter_name,has_video,has_child,parent_id,is_free,t_order,
+        create_time,create_by,update_time,update_by,function_type)
+        values(#{categoryId},#{courseId},#{tag},#{courseName},#{chapterName},#{hasVideo},#{hasChild},
+        #{parentId},#{isFree},#{tOrder},#{createTime},#{createBy},#{updateTime},#{updateBy},#{functionType})    
+    </insert>
+
+    <update id="updateChapter" parameterType="Chapter" >
+        update qf_chapter
+        <set>
+        	 <if test="categoryId!=null and categoryId!='' ">
+                `category_id`=#{categoryId},
+            </if>
+            <if test="courseId!=null and courseId!='' ">
+                `course_id`=#{courseId},
+            </if>
+            <if test="tag!=null and tag!='' ">
+                `tag`=#{tag},
+            </if>
+            <if test="courseName !=null and courseName!='' ">
+                `course_name`=#{courseName},
+            </if>
+            <if test="chapterName!=null and chapterName!='' ">
+                `chapter_name`=#{chapterName},
+            </if>
+            <if test="hasVideo!=null and hasVideo!='' ">
+                `has_video`=#{hasVideo},
+            </if>
+            <if test="hasChild!=null and hasChild!='' ">
+                `has_child`=#{hasChild},
+            </if>
+            <if test="parentId!=null and parentId!='' ">
+                `parent_Id`=#{parentId},
+            </if>
+            <if test="isFree!=null and isFree!='' ">
+                `is_free`=#{isFree},
+            </if>
+            <if test="tOrder!=null and tOrder!='' ">
+                `t_order`=#{tOrder},
+            </if>
+        </set>
+        where `id`=#{id}
+    </update>
+
+    <delete id="deleteChapter" parameterType="Integer">
+        delete from qf_chapter
+        where id=#{id}
+    </delete>
+</mapper> 

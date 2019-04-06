@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssm.promotion.core.dao.CourseDao">
+    <sql id="Base_Column_List">
+    	id,`course_name` as courseName,description,`category_id` as categoryId,tag,`is_del` as isDel,
+    	`is_not_paper` as isNotPaper,`course_img` as courseImg,
+    	`create_time` as createTime,`create_by` as createBy ,`update_time` as updateTime,
+    	`update_by` as updateBy
+    </sql>
+    
+    <sql id="Base_Column_insert">
+    	id,course_name as courseName,description,`category_id` as categoryId,tag,`is_del` as isDel,
+    	`is_not_paper` as isNotPaper,`course_img as` courseImg,
+    	`create_time` as createTime,`create_by` as createBy ,
+    </sql>
+    
+    <resultMap type="Course" id="CourseResult">
+        <result property="id" column="id"/>
+        <result property="courseName" column="courseName"/>
+        <result property="description" column="description"/>
+        <result property="categoryId" column="category_id"/>
+        <result property="tag" column="tag"/>
+        <result property="isDel" column="is_del"/>
+        <result property="isNotPaper" column="is_not_paper" />
+        <result property="courseImg" column="course_img"/>
+        <result property="createTime" column="create_time"/>
+        <result property="createBy" column="create_by"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="updateBy" column="update_by"/>
+    </resultMap>
+    
+    <select id="findCourses" parameterType="Map" resultMap="CourseResult">
+    	select 
+    	<include refid="Base_Column_List"/>
+    	from qf_course
+    	<where>
+    		 <if test="condition!=null and condition!='' ">
+                and course_name like #{condition}
+            </if>
+    	</where>
+		<if test="pageNum != null and pageSize != null">
+			LIMIT #{pageNum},#{pageSize}
+		</if>
+    </select>
+    
+    <select id="findCourseById" parameterType="Map" resultMap="CourseResult">
+    	select 
+    	<include refid="Base_Column_List"/>
+    	from qf_course
+    	WHERE id = #{id}
+    </select>
+    
+    <select id="getTotalCourse" parameterType="Map" resultType="Long">
+    	 select count(*) from qf_course
+        <where>
+            <if test="courseName!=null and courseName!='' ">
+                and course_name like #{courseName}
+            </if>
+        </where>
+    </select>
+    
+    <select id="getAllCourse" resultType="Course">
+    	SELECT
+		<include refid="Base_Column_List" />
+		FROM qf_course
+    </select>
+    
+    <insert id="addCourse" parameterType="Course">
+    	insert into qf_course(`course_name`,`description`,`category_id`,`tag`,`is_del`,
+        					  `create_time`,`create_by`,`is_not_paper`,`course_img`)
+        values(#{courseName},#{description},#{categoryId},#{tag},#{isDel},#{createTime},
+        	   #{createBy},#{isNotPaper},#{courseImg})
+    </insert>
+    
+    <update id='editCourse' parameterType='Course'>
+		UPDATE qf_course 
+		<set>
+			<if test="courseName != null and courseName !=''">
+				course_name= #{courseName},
+			</if>
+			<if test="description != null and description!=''">
+				description = #{description},
+			</if>
+			<if test="categoryId != null and categoryId!=''">
+				category_id = #{categoryId,jdbcType=INTEGER},
+			</if>
+			<if test="tag != null and tag!=''">
+				tag = #{tag},
+			</if>
+			<if test="isDel != null and isDel!=''">
+				is_del = #{isDel,jdbcType=INTEGER},
+			</if>
+			<if test="createTime != null and createTime!=''">
+				create_time = #{createTime},
+			</if>
+			<if test="createBy != null and createBy!=''">
+				create_by = #{createBy},
+			</if>
+			<if test="updateTime != null and updateTime!=''">
+				update_time = #{updateTime},
+			</if>
+			<if test="updateBy != null and updateBy!=''">
+				update_by = #{updateBy},
+			</if>
+			<if test="courseImg != null and courseImg!=''">
+				course_img = #{courseImg},
+			</if>
+		</set>
+		WHERE id = #{id}
+	</update>
+    
+    <delete id='deleteCourse' parameterType="java.lang.Integer">
+		DELETE FROM qf_course WHERE id = #{id}
+	</delete>
+    
+</mapper>

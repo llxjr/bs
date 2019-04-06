@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssm.promotion.core.dao.QuestionAnswerDao">
+
+	<sql id="Base_Column_List">
+	    	id, `question_id` as questionId, stem, answer, `chapter_id` as chapterId,`chapter_name` as chapterName,`course_id` as courseId
+	    	,`course_name` as courseName, correct, `a_order` as aOrder
+	</sql>
+
+
+    <resultMap type="QuestionAnswer" id="QuestionAnswerResult">
+        <result property="id" column="id"/>
+        <result property="questionId" column="question_id"/>
+        <result property="stem" column="stem"/>
+        <result property="answer" column="answer"/>
+        <result property="chapterId" column="chapter_id"/>
+        <result property="chapterName" column="chapter_name"/>
+        <result property="courseId" column="course_id"/>
+        <result property="courseName" column="course_name"/>
+        <result property="correct" column="correct"/>
+         <result property="aOrder" column="a_order"/>
+    </resultMap>
+
+    <select id="findQuestionAnswer" parameterType="Map"  resultMap="QuestionAnswerResult">
+       SELECT 
+		<include refid="Base_Column_List" />
+       FROM qf_question_answer 
+        <where>
+            <if test="answer!=null and answer!='' ">
+                and answer like #{answer}
+            </if>
+            <if test="stem!=null and stem!='' ">
+                and stem like #{stem}
+            </if>
+            <if test="courseName!=null and courseName!='' ">
+                and course_name like #{courseName}
+            </if>
+        </where>
+        <if test="start!=null and size!=null">
+            limit #{start},#{size}
+        </if>
+    </select>
+    <select id="getTotalUser" parameterType="Map" resultType="Long">
+        select count(*) from qf_question_answer 
+        <where>
+            <if test="answer!=null and answer!='' ">
+                and answer like #{answer}
+            </if>
+            <if test="stem!=null and stem!='' ">
+                and stem like #{stem}
+            </if>
+            <if test="courseName!=null and courseName!='' ">
+                and course_name like #{courseName}
+            </if>
+        </where>
+    </select>
+
+    <insert id="addQuestionAnswer" parameterType="QuestionAnswer">
+       insert into 
+       qf_question_answer (id,question_id, stem, answer,chapter_id,chapter_name,course_id,course_name,correct,`a_order`)
+       values(#{id},#{questionId},#{stem},#{answer},#{chapterId},#{chapterName},#{courseId},#{courseName},#{correct},#{aOrder})
+       
+    </insert>
+
+   
+
+    <update id="updateQuestionAnswer" parameterType="QuestionAnswer">
+		update qf_question_answer
+        <set>
+            <if test="answer !=null and answer !='' ">
+                `answer`=#{answer},
+            </if>
+            <if test="correct == 0 ">
+                `correct` = 0,
+            </if>
+            <if test="correct == 1 ">
+                `correct` = 1,
+            </if>
+            <if test="aOrder!=null and aOrder!='' ">
+                `a_order`=#{aOrder},
+            </if>
+        </set>
+		where id=#{id}
+	</update>
+
+
+    <delete id="deleteQuestionAnswer" parameterType="int">
+		delete from
+		qf_question_answer
+		where id=#{id}
+	</delete>
+
+    <select id="findQuestionAnswerById" parameterType="int" resultMap="QuestionAnswerResult">
+		SELECT 
+		<include refid="Base_Column_List" />
+		 FROM qf_question_answer
+		 where id=#{id}
+	</select>
+	
+	<select id="findByQuestionId" parameterType="int" resultMap="QuestionAnswerResult">
+		SELECT 
+		<include refid="Base_Column_List" />
+		 FROM qf_question_answer
+		 where question_id=#{questionId}
+	</select>
+	
+</mapper> 

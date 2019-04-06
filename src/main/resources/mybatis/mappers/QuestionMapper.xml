@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssm.promotion.core.dao.QuestionDao">
+   
+   <sql id="Base_Column_List">
+    	id, `create_time` as createTime, `create_by` as createBy, `update_time` as updateTime, `update_by` as updateBy
+    	, `chapter_id` as chapterId,`chapter_name` as chapterName, `course_id` as courseId, `course_name` as courseName, `parent_id` as parentId, level, `question_type` as questionType
+    	, stem, `answer_num` as answerNum, `correct_num` as correctNum, `error_num` as errorNum, value
+    	, correct, `bank_type` as bankType
+    </sql>
+    
+    <resultMap type="Question" id="QuestionResult">
+        <result property="id" column="id"/>
+        <result property="createTime" column="create_time"/>
+        <result property="createBy" column="create_by"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="updateBy" column="update_by"/>
+        <result property="chapterId" column="chapter_id" />
+        <result property="chapterName" column="chapter_name" />
+        <result property="courseId" column="course_id" />
+        <result property="courseName" column="course_name" />
+        <result property="parentId" column="parent_id" />
+        <result property="level" column="level" />
+        <result property="questionType" column="question_type" />
+        <result property="stem" column="stem" />
+        <result property="answerNum" column="answer_num"/>
+        <result property="correctNum" column="correct_num"/>
+        <result property="errorNum" column="error_num"/>
+        <result property="value" column="value"/>
+        <result property="correct" column="correct"/>
+        <result property="bankType" column="bank_type"/>
+    </resultMap>
+	
+    <select id="findAllQuestion"  resultMap="QuestionResult">
+    	SELECT
+		 <include refid="Base_Column_List" /> 
+		FROM qf_question
+    </select>
+
+    <select id="findById" parameterType="int" resultMap="QuestionResult">
+    	SELECT
+		 <include refid="Base_Column_List" /> 
+		FROM qf_question
+		WHERE id = #{0}
+    </select>
+    
+    
+    <select id="findQuestion" parameterType="Map" resultMap="QuestionResult">
+        select 
+        <include refid="Base_Column_List" />
+		 from qf_question
+        <where>
+            <if test="stem!=null and stem!='' ">
+                and stem like #{stem}
+            </if>
+            <if test="courseName!=null and courseName!='' ">
+                and course_name like #{courseName}
+            </if>
+        </where>
+		<if test="pageNum != null and pageSize != null">
+			LIMIT #{pageNum},#{pageSize}
+		</if>
+    </select>
+
+    <select id="getTotalQuestion" parameterType="Map" resultType="Long">
+        select count(*) from qf_question
+        <where>
+            <if test="stem!=null and stem!='' ">
+                and stem like #{stem}
+            </if>
+            <if test="courseName!=null and courseName!='' ">
+                and course_name like #{courseName}
+            </if>
+        </where>
+    </select>
+
+    <insert id="addQuestion" parameterType="Question">
+        insert into qf_question(stem,chapter_id,chapter_name,course_id,course_name,parent_id,level,question_type,answer_num,correct_num,error_num,value
+        ,correct,bank_type,create_time,create_by,update_time,update_by)
+        values(#{stem},#{chapterId},#{chapterName},#{courseId},#{courseName},#{parentId},#{level},#{questionType},#{answerNum},#{correctNum},#{errorNum}
+        ,#{value},#{correct},#{bankType},#{createTime},#{createBy},#{updateTime},#{updateBy})
+    </insert>
+
+   <update id="updateQuestion" parameterType="Question" >
+        update qf_question
+        <set>
+            <if test="stem!=null and stem!='' ">
+                `stem`=#{stem},
+            </if>
+            <if test="parentId!=null and parentId!='' ">
+                `parent_id`=#{parentId},
+            </if>
+            <if test="level!=null and level!='' ">
+                `level`=#{level},
+            </if>
+            <if test="questionType!=null and questionType!='' ">
+                `question_type`=#{questionType},
+            </if>
+            <if test="answerNum!=null and answerNum!='' ">
+                `answer_num`=#{answerNum},
+            </if>
+            <if test="correctNum!=null and correctNum!='' ">
+                `correct_num`=#{correctNum},
+            </if>
+            <if test="errorNum!=null and errorNum!='' ">
+                `error_num`=#{errorNum},
+            </if>
+            <if test="value!=null and value!='' ">
+                `value`=#{value},
+            </if>
+            <if test="correct!=null ">
+                `correct`=#{correct},
+            </if>
+            <if test="bankType!=null and bankType!='' ">
+                `bank_type`=#{bankType},
+            </if>
+             <if test="updateTime!=null and updateTime!='' ">
+                `update_time`=#{updateTime},
+            </if>
+             <if test="updateBy!=null and updateBy!='' ">
+                `update_By`=#{updateBy},
+            </if>
+        </set>
+        where `id`=#{id}
+    </update>
+
+    <delete id="deleteQuestion" parameterType="Integer">
+        delete from qf_question
+        where id=#{id}
+    </delete>
+</mapper> 

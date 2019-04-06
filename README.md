@@ -22,16 +22,7 @@
   <a href='http://perfect-ssm.hanshuai.xin'>perfect-ssm</a> <br /> 
   登录名：admin <br /> 
   密码：123456
-  ![login-page](https://raw.githubusercontent.com/ZHENFENG13/resource/master/images/2017-08-08/login.png)
 
-##### 架构图
- 
- ###### 架构简图
- ![架构简图](https://raw.githubusercontent.com/ZHENFENG13/resource/master/images/2017-08-06/ssm%E6%9E%B6%E6%9E%84%E5%9B%BE-%E7%AE%80%E7%89%88.png)
- 
- ###### 架构详图
- ![1.0](https://raw.githubusercontent.com/ZHENFENG13/resource/master/images/2017-08-06/ssm%E6%9E%B6%E6%9E%84%E5%9B%BE-2.0-%E8%AF%A6%E7%89%88.png)
- 
 想要进一步了解可以到[架构演进详解](https://github.com/ZHENFENG13/perfect-ssm/wiki/%E6%9E%B6%E6%9E%84%E6%BC%94%E8%BF%9B%E8%AF%A6%E8%A7%A3)wiki页面查看。
  
 ## Documents 

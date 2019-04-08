@@ -67,10 +67,6 @@ $(function() {
 									title : '回答数目',
 									width : 100
 								},{
-									field : 'correctNum',
-									title : '正确数目',
-									width : 100
-								},{
 									field : 'errorNum',
 									title : '错误数目',
 									width : 100
@@ -96,7 +92,17 @@ $(function() {
 											return "强化练习题";
 										}
 									}
-								},
+								},{
+									field : 'operate',
+									title : '操作',
+									width : 100,
+									formatter: function(value, row, index){
+										return "<a href='javascript:void(0)' onclick='openAdd(" + row.id + ")'>+答案</a>";
+//										return "<a href='javascript:void(0)' onclick='openAdd(" + row.id + 
+//										")'>+答案</a> &nbsp; <a href='javascript:void(0)' onclick='editOrDelete(" + row.id + ")'>编辑/删除</a>";
+									}
+								}
+								
 								 ] ],
 						pagination : true,
 						pageSize : 10,
@@ -141,6 +147,111 @@ function searchQuestion() {
 		"stem" : stem,
 		"courseName":courseName
 	});
+}
+
+
+function openAdd(id){
+	console.log("test !!!easyUI");
+//	var selectedRows = $('#dg').datagrid('getSelections');
+//	var row = selectedRows[0];
+	console.log(id);
+	$("#questionId").val(id);
+	$('#answerdlg').dialog({
+		title : '添加答案',
+		closed : false,
+		cache: false,
+	    width: 600,             
+	    height: 300,        
+		buttons : [ {
+			text : '保存',
+			iconCls : 'icon-add',
+			handler : function() {
+				addAnswer(id);
+			}
+		}, {
+			text : '取消',
+			iconCls : 'icon-cancel',
+			handler : function() {
+				$('#answerdlg').dialog("close");
+				resetValue();
+			}
+		} ]
+	})
+};
+
+function editOrDelete(id){
+	console.log("edit answer" + id);
+	$.ajax({
+		url : 'qf/answer/findByQuestionId/' +id,
+		type : 'POST',
+		data : {},
+		dataType : 'json',
+		contentType : 'application/json; charset=utf-8',
+		success : function(res) {
+//			if (res.resultCode == 200) {
+//				$.messager.alert("系统提示", "添加问题成功!");
+//				resetValue();
+//				$('#answerdlg').dialog("close");
+//				$('#dg').datagrid('reload');
+//				return;
+//			} else {
+//				$.messager.alert("系统提示", res.message);
+//				return;
+//			}
+		},
+		error : function() {
+			$.messager.alert("系统错误!");
+			return;
+		}
+
+	})
+}
+
+function addAnswer(){
+	var answer = $('#answer').val();
+	var questionId = $('#questionId').val();
+	var correct = $('#correct').val();
+	if (answer == null || answer == '') {
+		$.messager.alert('系统提示', '答案不能为空!');
+		return;
+	}
+	if (questionId == null || questionId == '') {
+		$.messager.alert('系统提示', '所属题目不能为空!');
+		return;
+	}
+	if (correct == null || correct == '') {
+		$.messager.alert('系统提示', '是否正确不能为空!');
+		return;
+	}
+	var questionAnswer = new Object();
+	questionAnswer.answer =answer;
+	questionAnswer.questionId =questionId;
+	questionAnswer.correct =correct;
+	var data = JSON.stringify(questionAnswer);
+	$.ajax({
+		url : 'qf/answer/addQuestionAnswer',
+		type : 'POST',
+		data : data,
+		dataType : 'json',
+		contentType : 'application/json; charset=utf-8',
+		success : function(res) {
+			if (res.resultCode == 200) {
+				$.messager.alert("系统提示", "添加问题成功!");
+				resetValue();
+				$('#answerdlg').dialog("close");
+//				$('#dg').datagrid('reload');
+				return;
+			} else {
+				$.messager.alert("系统提示", res.message);
+				return;
+			}
+		},
+		error : function() {
+			$.messager.alert("系统错误!");
+			return;
+		}
+
+	})
 }
 
 
@@ -332,7 +443,7 @@ function editQuestion() {
 			"stem" : stem,
 			"chapterId" : chapterId,
 //			"parentId" : parentId,
-			"bankType" : pankType,
+			"bankType" : bankType,
 			"level" : level,
 			"questionType" : questionType,
 			"answerNum" : answerNum,

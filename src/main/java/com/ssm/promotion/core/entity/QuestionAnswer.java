@@ -5,7 +5,7 @@ public class QuestionAnswer {
 	private int correct;
 	private String  answer;
 	private String stem;
-	private int questionId;
+	private Integer questionId;
 	private int chapterId;
 	private String chapterName;
 	private int courseId;
@@ -35,10 +35,10 @@ public class QuestionAnswer {
 	public void setAnswer(String answer) {
 		this.answer = answer;
 	}
-	public int getQuestionId() {
+	public Integer getQuestionId() {
 		return questionId;
 	}
-	public void setQuestionId(int questionId) {
+	public void setQuestionId(Integer questionId) {
 		this.questionId = questionId;
 	}
 	public int getChapterId() {

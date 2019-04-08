@@ -7,7 +7,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <script src="js/course/course.js"></script>
-<script type="text/javascript"></script>
 <!-- 
 <script type="text/javascript">
 	var url = "${pageContext.request.contextPath}/qf/course";
@@ -220,6 +219,8 @@
 				 		&nbsp;<font color="red">*</font>
 					</td>
 				</tr>
+				<!-- 
+				
 				<tr>
 					<td>是否启用：</td>
 					<td>
@@ -231,6 +232,7 @@
 						&nbsp;<font color="red">*</font>
 					</td>
 				</tr>
+				 -->
 				<tr>
 					<td>增加图片：</td>
 					<td><input type="file" id="courseImg" name="img"></td>

@@ -35,20 +35,20 @@ $(function() {
 										}
 								
 								},
-								{
-									field : 'isDel',
-									title : '是否启用',
-									width : 80,
-									sortable : true,
-									rownumbers : true,
-									formatter : function(value, row, index) {
-										if (value == 0) {
-											return "否";
-										} else {
-											return "是";
-										}
-									}
-								},
+//								{
+//									field : 'isDel',
+//									title : '是否启用',
+//									width : 80,
+//									sortable : true,
+//									rownumbers : true,
+//									formatter : function(value, row, index) {
+//										if (value == 0) {
+//											return "否";
+//										} else {
+//											return "是";
+//										}
+//									}
+//								},
 								{
 									field : 'courseImg',	
 									title : '图片',
@@ -70,7 +70,8 @@ function reset() {
 	$('#id').val("");
 	$('#courseName').val("");
 	$('#description').val("");
-	$('#tag').val("");
+	$('#categoryId').val("");
+	$('#courseImg').val("");
 }
 
 function addPage() {
@@ -102,10 +103,11 @@ function addPage() {
 }
 
 function add() {
+	$('#id').val(121);
 	var courseName = $('#courseName').val();
 	var description = $('#description').val();
 	var categoryId = $('#categoryId').val();
-	var tag = $('#tag').val();
+//	var tag = $('#tag').val();
 	if (courseName == null || courseName == '') {
 		$.messager.alert('系统提示', '课程名不能为空!');
 		return;
@@ -114,13 +116,9 @@ function add() {
 		$.messager.alert('系统提示', '请选择目录!');
 		return;
 	}
-//	var course = new Object();
-//	course.courseName = categoryName;
-//	course.description = description;
-//	course.tag = tag
 	var formobj = document.getElementById("add_form");
 	var data=new FormData(formobj);
-//	var data = JSON.stringify(category);
+	console.log()
 	$.ajax({
 		url : 'qf/course/addCourse',
 		type : 'POST',
@@ -132,7 +130,6 @@ function add() {
 		success : function(res) {
 			if (res.resultCode == 200) {
 				$.messager.alert("系统提示", "添加课程成功!");
-				reset();
 				$('#dlg').dialog("close");
 				$('#dg').datagrid('reload');
 			} else {

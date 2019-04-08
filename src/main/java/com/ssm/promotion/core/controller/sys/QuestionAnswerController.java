@@ -119,12 +119,19 @@ public class QuestionAnswerController extends BasicController {
 //		log.info("request: article/delete , ids: " + ids);
 		return ResultGenerator.genSuccessResult();
 	}
- @RequestMapping(value = "findbyid/{id}",method=RequestMethod.POST)
- @ResponseBody
- public QuestionAnswer findbyid(int id ){
+	 @RequestMapping(value = "findbyid/{id}",method=RequestMethod.POST)
+	 @ResponseBody
+	 public QuestionAnswer findbyid(int id ){
+		 
+		 QuestionAnswer questionanswer =qas.findQuestionAnswerById(id);
+	 return questionanswer;
+	 }
 	 
-	 QuestionAnswer questionanswer =qas.findQuestionAnswerById(id);
-	return questionanswer;
- }
- 
+	 @RequestMapping(value = "findByQuestionId/{questionId}",method=RequestMethod.POST)
+	 @ResponseBody
+	 public void findByQuestionId(int questionId,HttpServletRequest request){
+		 List<QuestionAnswer> questionAnswers = qas.findByQuestionId(questionId);
+		 request.getSession().setAttribute("answers", questionAnswers);
+		 
+	 }
 }

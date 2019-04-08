@@ -92,18 +92,18 @@ public class CourseController {
 	
 	@RequestMapping(value = "addCourse", method = { RequestMethod.POST })
 	@ResponseBody
-	public Result addCourse(@RequestParam("img") MultipartFile file,
+	public Result addCourse(@RequestParam("img") MultipartFile c_img,
 			Course course, HttpServletRequest request) throws Exception {
-		System.out.println(file);
+		System.out.println(c_img);
 		String path = request.getServletContext().getRealPath("\\")+"\\courseImg"; //设定文件保存的目录
 		File dir = new File(path);
 		if (!dir.exists()) {
 			dir.mkdirs();
 		}
 		StringUtil stringUtil = new StringUtil();
-		String fileName = stringUtil.getUUID() + file.getOriginalFilename();
+		String fileName = stringUtil.getUUID() + c_img.getOriginalFilename();
 		File img = new File(dir, fileName);//获取文件名并存储到dir
-		file.transferTo(img);//上传
+		c_img.transferTo(img);//上传
 		course.setCourseImg("courseImg/" + fileName);
 		User currentUser = (User) request.getSession().getAttribute(
 				Constants.SESSION_USER);

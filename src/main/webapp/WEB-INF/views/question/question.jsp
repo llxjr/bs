@@ -141,10 +141,40 @@
 		</form>
 	</div>
 
+	<div id="answerdlg" class="easyui-dialog"
+		style="width: 620px;height:250px;padding: 10px 20px" closed="true"
+		buttons="#dlg-buttons">
+		<form id="answerfm" method="post">
+			<table cellspacing="8px">
+				<tr>
+					<td>答案：</td>
+					<td><input type="text" id="answer" name="answer"
+						class="easyui-validatebox" required="true" />&nbsp;<font
+						color="red">*</font> <input type="hidden" id="questionId" value="0">
+					</td>
+				</tr>
+				<tr>
+					<td>是否正确：</td>
+					<td>
+						<select id='correct' name='correct'>
+							<option value=''>---选择正确与否---</option>
+							<option value='1'>---正确---</option>
+							<option value='0'>---不正确---</option>
+						</select>
+						&nbsp;<font color="red">*</font>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+
+	
+	
 	<div id="dlg-buttons">
 		<a href="javascript:saveQuestion()" class="easyui-linkbutton"
 			iconCls="icon-ok">保存</a> <a href="javascript:closeQuestionDialog()"
 			class="easyui-linkbutton" iconCls="icon-cancel">关闭</a>
 	</div>
+	
 </body>
 </html>

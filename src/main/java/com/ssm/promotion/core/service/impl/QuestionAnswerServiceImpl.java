@@ -95,6 +95,11 @@ public class QuestionAnswerServiceImpl implements QuestionAnswerService{
 		// TODO Auto-generated method stub
 		return questionAnswerDao.getTotalUser(map);
 	}
+
+	@Override
+	public List<QuestionAnswer> findByQuestionId(int questionId) {
+		return questionAnswerDao.findByQuestionId(questionId);
+	}
 	
 	
 	

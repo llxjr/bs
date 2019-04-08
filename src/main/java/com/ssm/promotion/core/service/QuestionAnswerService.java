@@ -19,4 +19,6 @@ public List<QuestionAnswerDTO> findQuestionAnswer (Map<String, Object> map);
 	public QuestionAnswer findQuestionAnswerById(int id);
 	
 	public Long getTotalUser(Map<String, Object> map);
+	
+	public List<QuestionAnswer> findByQuestionId(int questionId);
 }

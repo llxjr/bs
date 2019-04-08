@@ -8,7 +8,6 @@ import com.ssm.promotion.core.entity.base.BaseEntity;
  */
 public class Course extends BaseEntity{
 	
-	private int id; 
 	private String courseName;
 	private String description;
 	private Integer categoryId;
@@ -18,12 +17,7 @@ public class Course extends BaseEntity{
 	private String courseImg;
 	
 	
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
+	
 	public String getCourseName() {
 		return courseName;
 	}
@@ -68,7 +62,7 @@ public class Course extends BaseEntity{
 	}
 	@Override
 	public String toString() {
-		return "Course [id=" + id + ", courseName=" + courseName + ", description=" + description + ", categoryId="
+		return "Course [courseName=" + courseName + ", description=" + description + ", categoryId="
 				+ categoryId + ", tag=" + tag + ", isDel=" + isDel + ", isNotPaper=" + isNotPaper + ", courseImg="
 				+ courseImg + "]";
 	}

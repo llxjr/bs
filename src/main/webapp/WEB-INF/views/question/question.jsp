@@ -10,8 +10,8 @@
 </head>
 <body style="margin:1px;">
 	<!--easyui中用于显示的，数据的来源在js里面  -->
-	<table id="dg"></table>
-	<div id="tb">
+	<table id="dg"  class="easyui-datagrid"></table>
+	<div id="tb"  class="easyui-datagrid">
 		<div>
 		<div>
 			<a href="javascript:addPage()" class="easyui-linkbutton"

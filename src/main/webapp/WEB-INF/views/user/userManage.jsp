@@ -156,7 +156,7 @@
 </head>
 <body style="margin:1px;">
 	<!-- 这个就是显示的表格数据，数据是在userManager.js里面使用ajax加载的 -->
-	<table id="dg"></table>
+	<table id="dg"  class="easyui-datagrid"></table>
 	<div id="tb">
 		<div>
 			<a href="javascript:openUserAddDialog()" class="easyui-linkbutton"

@@ -10,9 +10,9 @@
 
 <body style="margin:1px;">
 	<!-- datagrid -->
-	<table id="dg"></table>
+	<table id="dg"  class="easyui-datagrid"></table>
 	<!-- toolbar -->
-	<div id="tb">
+	<div id="tb"  class="easyui-datagrid">
 		<div>
 			<a href="javascript:addPage()" class="easyui-linkbutton"
 				iconCls="icon-add" plain="true">添加</a> <a

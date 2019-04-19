@@ -10,7 +10,7 @@
 
 <body style="margin:1px;">
 	<!--  dialog，全部数据显示 -->
-	<table id="dg"></table>
+	<table id="dg"  class="easyui-datagrid"></table>
 	<!-- toolbar -->
 	<div id="tb">
 		<div>

@@ -1,7 +1,7 @@
 package com.ssm.promotion.core.common;
 
 /**
- * Created by 13 on 2017/6/26.
+ * Created by liu66 
  */
 public class Constants {
 

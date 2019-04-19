@@ -55,7 +55,8 @@ $(function() {
 									height: 100,
 									width : 80,	
 									formatter: function(value,row,index) {
-										return'<img width="120px"  height="120px" src="' + value + '" />';
+//										return'<img width="120px"  height="120px" src="' + value + '" />';
+										return'<img width="120px"  height="120px" src="' + '/images/' + value + '" />';
 									}
 								},
 							] ],

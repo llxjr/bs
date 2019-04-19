@@ -154,7 +154,7 @@
 </head>
 <body style="margin:1px;">
 	<!--easyui中用于显示的，数据的来源在js里面  -->
-	<table id="dg"></table>
+	<table id="dg"  class="easyui-datagrid" ></table>
 	<div id="tb">
 		<div>
 			<a href="javascript:addPage()" class="easyui-linkbutton"
@@ -162,7 +162,7 @@
 				href="javascript:editPage()" class="easyui-linkbutton"
 				iconCls="icon-edit" plain="true">修改</a> <a
 				href="javascript:deleteCourse()" class="easyui-linkbutton"
-				iconCls="icon-remove" plain="true">删除</a>
+				iconCls="icon-remove" plain="true">删除</a><img height="10px" width="10px" src="D:\english1.jpg">
 		</div>
 		<div>
 			&nbsp;类目名：&nbsp;<input type="text" id="c_courseName" size="20"

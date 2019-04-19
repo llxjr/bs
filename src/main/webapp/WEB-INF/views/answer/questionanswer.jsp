@@ -10,7 +10,7 @@
 
 </head>
 <body style="margin:1px;">
-	<table id="dg"></table>
+	<table id="dg"  class="easyui-datagrid"></table>
 	<div id="tb">		
 		<div>
 			<a href="javascript:addPage()" class="easyui-linkbutton"

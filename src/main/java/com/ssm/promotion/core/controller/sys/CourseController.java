@@ -95,7 +95,8 @@ public class CourseController {
 	public Result addCourse(@RequestParam("img") MultipartFile c_img,
 			Course course, HttpServletRequest request) throws Exception {
 		System.out.println(c_img);
-		String path = request.getServletContext().getRealPath("\\")+"\\courseImg"; //设定文件保存的目录
+//		String path = request.getServletContext().getRealPath("\\")+"\\courseImg"; //设定文件保存的目录
+		String path = "D:\\ProjectImage\\courseImg";
 		File dir = new File(path);
 		if (!dir.exists()) {
 			dir.mkdirs();
@@ -104,7 +105,8 @@ public class CourseController {
 		String fileName = stringUtil.getUUID() + c_img.getOriginalFilename();
 		File img = new File(dir, fileName);//获取文件名并存储到dir
 		c_img.transferTo(img);//上传
-		course.setCourseImg("courseImg/" + fileName);
+//		course.setCourseImg("courseImg/" + fileName);
+		course.setCourseImg(c_img.getOriginalFilename());
 		User currentUser = (User) request.getSession().getAttribute(
 				Constants.SESSION_USER);
 		if (currentUser != null) {
@@ -141,14 +143,16 @@ public class CourseController {
 				return ResultGenerator.genFailResult("编辑失败,服务器异常!");
 			}
 		}else{
-			String path=request.getServletContext().getRealPath("\\")+"\\courseImg";
+//			String path=request.getServletContext().getRealPath("\\")+"\\courseImg";
+			String path = "D:\\ProjectImage\\courseImg";
 			File dir=new File(path);
 			if(!dir.exists()){
 				dir.mkdirs();
 			}
 			File img = new File(dir, file.getOriginalFilename());//获取文件名并存储到dir
 			file.transferTo(img);//上传
-			course.setCourseImg("courseImg/" + file.getOriginalFilename());
+//			course.setCourseImg("courseImg/" + file.getOriginalFilename());
+			course.setCourseImg(file.getOriginalFilename());
 			User currentUser = (User) request.getSession().getAttribute(
 					Constants.SESSION_USER);
 			if (currentUser != null) {

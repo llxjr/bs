@@ -35,6 +35,11 @@ $(function() {
 										}
 								
 								},
+								{
+									field : 'price',
+									title : '价格/￥',
+									width : 100,
+								},
 //								{
 //									field : 'isDel',
 //									title : '是否启用',
@@ -73,6 +78,7 @@ function reset() {
 	$('#description').val("");
 	$('#categoryId').val("");
 	$('#courseImg').val("");
+	$('#price').val("");
 }
 
 function addPage() {
@@ -108,6 +114,7 @@ function add() {
 	var courseName = $('#courseName').val();
 	var description = $('#description').val();
 	var categoryId = $('#categoryId').val();
+	var price = $('#price').val();
 //	var tag = $('#tag').val();
 	if (courseName == null || courseName == '') {
 		$.messager.alert('系统提示', '课程名不能为空!');
@@ -115,6 +122,10 @@ function add() {
 	}
 	if (categoryId == null || categoryId == '') {
 		$.messager.alert('系统提示', '请选择目录!');
+		return;
+	}
+	if (price == null || price == '') {
+		$.messager.alert('系统提示', '请填写价格');
 		return;
 	}
 	var formobj = document.getElementById("add_form");

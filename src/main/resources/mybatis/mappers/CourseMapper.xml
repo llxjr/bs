@@ -4,14 +4,14 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ssm.promotion.core.dao.CourseDao">
     <sql id="Base_Column_List">
-    	id,`course_name` as courseName,description,`category_id` as categoryId,tag,`is_del` as isDel,
+    	id,`course_name` as courseName,description,`category_id` as categoryId,price,tag,`is_del` as isDel,
     	`is_not_paper` as isNotPaper,`course_img` as courseImg,
     	`create_time` as createTime,`create_by` as createBy ,`update_time` as updateTime,
     	`update_by` as updateBy
     </sql>
     
     <sql id="Base_Column_insert">
-    	id,course_name as courseName,description,`category_id` as categoryId,tag,`is_del` as isDel,
+    	id,course_name as courseName,description,`category_id` as categoryId,price,tag,`is_del` as isDel,
     	`is_not_paper` as isNotPaper,`course_img as` courseImg,
     	`create_time` as createTime,`create_by` as createBy ,
     </sql>
@@ -21,6 +21,7 @@
         <result property="courseName" column="courseName"/>
         <result property="description" column="description"/>
         <result property="categoryId" column="category_id"/>
+        <result property="price" column="price"/>
         <result property="tag" column="tag"/>
         <result property="isDel" column="is_del"/>
         <result property="isNotPaper" column="is_not_paper" />
@@ -68,9 +69,9 @@
     </select>
     
     <insert id="addCourse" parameterType="Course">
-    	insert into qf_course(`course_name`,`description`,`category_id`,`tag`,`is_del`,
+    	insert into qf_course(`course_name`,`description`,`category_id`,`price`,`tag`,`is_del`,
         					  `create_time`,`create_by`,`is_not_paper`,`course_img`)
-        values(#{courseName},#{description},#{categoryId},#{tag},#{isDel},#{createTime},
+        values(#{courseName},#{description},#{categoryId},#{price},#{tag},#{isDel},#{createTime},
         	   #{createBy},#{isNotPaper},#{courseImg})
     </insert>
     
@@ -85,6 +86,9 @@
 			</if>
 			<if test="categoryId != null and categoryId!=''">
 				category_id = #{categoryId,jdbcType=INTEGER},
+			</if>
+			<if test="price != null and price!=''">
+				price = #{price,jdbcType=DOUBLE},
 			</if>
 			<if test="tag != null and tag!=''">
 				tag = #{tag},

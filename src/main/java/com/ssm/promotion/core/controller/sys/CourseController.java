@@ -106,7 +106,7 @@ public class CourseController {
 		File img = new File(dir, fileName);//获取文件名并存储到dir
 		c_img.transferTo(img);//上传
 //		course.setCourseImg("courseImg/" + fileName);
-		course.setCourseImg(c_img.getOriginalFilename());
+		course.setCourseImg(fileName);
 		User currentUser = (User) request.getSession().getAttribute(
 				Constants.SESSION_USER);
 		if (currentUser != null) {

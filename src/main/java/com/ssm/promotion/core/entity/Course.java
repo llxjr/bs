@@ -4,7 +4,7 @@ import com.ssm.promotion.core.entity.base.BaseEntity;
 
 /**
  * @author liu66
- * @oper_time 2018年10月10日
+ * 
  */
 public class Course extends BaseEntity{
 	
@@ -15,6 +15,7 @@ public class Course extends BaseEntity{
 	private Integer isDel;
 	private Integer isNotPaper;
 	private String courseImg;
+	private Double price;
 	
 	
 	
@@ -60,11 +61,18 @@ public class Course extends BaseEntity{
 	public void setCourseImg(String courseImg) {
 		this.courseImg = courseImg;
 	}
+	
+	public Double getPrice() {
+		return price;
+	}
+	public void setPrice(Double price) {
+		this.price = price;
+	}
 	@Override
 	public String toString() {
-		return "Course [courseName=" + courseName + ", description=" + description + ", categoryId="
-				+ categoryId + ", tag=" + tag + ", isDel=" + isDel + ", isNotPaper=" + isNotPaper + ", courseImg="
-				+ courseImg + "]";
+		return "Course [courseName=" + courseName + ", description=" + description + ", categoryId=" + categoryId
+				+ ", tag=" + tag + ", isDel=" + isDel + ", isNotPaper=" + isNotPaper + ", courseImg=" + courseImg
+				+ ", price=" + price + "]";
 	}
 	
 }

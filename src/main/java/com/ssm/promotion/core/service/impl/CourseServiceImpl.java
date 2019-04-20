@@ -38,6 +38,7 @@ public class CourseServiceImpl implements CourseService {
 			course = courses.get(i);
 			CourseDTO courseDTO = new CourseDTO();
 			courseDTO.setCategory(categoryDao.findCategoryById(course.getCategoryId()));
+			courseDTO.setPrice(course.getPrice());
 			courseDTO.setCourseImg(course.getCourseImg());
 			courseDTO.setCourseName(course.getCourseName());
 			courseDTO.setDescription(course.getDescription());

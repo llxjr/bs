@@ -8,13 +8,14 @@ import com.ssm.promotion.core.entity.base.BaseEntity;
 
 /**
  * @author liu66
- * @oper_time 2018年10月22日
+ * 
  */
 public class CourseDTO implements Serializable{
 	private int id;
 	private String courseName;
 	private String description;
 	private String categoryId;
+	private Double price;
 	private Category category;
 	private String tag;
 	private Integer isDel;
@@ -42,6 +43,12 @@ public class CourseDTO implements Serializable{
 	}
 	public void setCategoryId(String categoryId) {
 		this.categoryId = categoryId;
+	}
+	public Double getPrice() {
+		return price;
+	}
+	public void setPrice(Double price) {
+		this.price = price;
 	}
 	public Category getCategory() {
 		return category;
@@ -106,10 +113,10 @@ public class CourseDTO implements Serializable{
 	}
 	@Override
 	public String toString() {
-		return "CourseDTO [id=" + id + ", courseName=" + courseName + ", description=" + description + ", category="
-				+ category + ", tag=" + tag + ", isDel=" + isDel + ", isNotPaper=" + isNotPaper + ", courseImg="
-				+ courseImg + ", createTime=" + createTime + ", createBy=" + createBy + ", updateTime=" + updateTime
-				+ ", updateBy=" + updateBy + "]";
+		return "CourseDTO [id=" + id + ", courseName=" + courseName + ", description=" + description + ", categoryId="
+				+ categoryId + ", price=" + price + ", category=" + category + ", tag=" + tag + ", isDel=" + isDel
+				+ ", isNotPaper=" + isNotPaper + ", courseImg=" + courseImg + ", createTime=" + createTime
+				+ ", createBy=" + createBy + ", updateTime=" + updateTime + ", updateBy=" + updateBy + "]";
 	}
 	
 }

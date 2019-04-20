@@ -206,9 +206,12 @@
 						
 				</tr>
 				<tr>
+					<td>课程价格：</td>
+					<td><input type="text" id="price" name="price" class="easyui-validatebox"/>
+				</tr>
+				<tr>
 					<td>课程描述：</td>
-					<td><input type="text" id="description" name="description"
-						class="easyui-validatebox"/>
+					<td><input type="text" id="description" name="description" class="easyui-validatebox"/>
 				</tr>
 				<tr>
 					<td>课程类目：</td>

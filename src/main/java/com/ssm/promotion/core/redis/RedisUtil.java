@@ -4,12 +4,7 @@ import org.springframework.data.redis.cache.RedisCache;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 
-/**
- * redis util
- * @author chj
- * @date 2018-6-19
- *
- */
+
 @Component
 public class RedisUtil {
 

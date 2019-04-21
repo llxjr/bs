@@ -8,13 +8,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.FutureTask;
 
-/** 
- * @description 
- * @author  chj 
- * @date 创建时间：2018-6-5 上午9:25:52 
- * @version 1.0 
- * @since  
- */
+
 public class FutureTaskTest {
 	private static final Executor exec = Executors.newFixedThreadPool(5);
 	

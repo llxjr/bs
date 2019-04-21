@@ -39,7 +39,7 @@ import com.ssm.promotion.core.util.StringUtil;
 
 /**
  * @author liu66
- * @project_name perfect-ssm
+ * 
  */
 @Controller
 @RequestMapping("/users")

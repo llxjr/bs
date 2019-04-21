@@ -30,11 +30,7 @@ import com.ssm.promotion.core.service.UserService;
 import com.ssm.promotion.core.util.MD5Util;
 import com.ssm.promotion.core.util.StringUtil;
 
-/**
- * @author zpy
- * @project_name perfect-ssm
- * @date 2018-10-10
- */
+
 @Service("chapterService")
 public class ChapterServiceImpl implements ChapterService {
 

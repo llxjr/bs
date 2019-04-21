@@ -2,11 +2,7 @@ package com.ssm.promotion.core.dto;
 
 import java.io.Serializable;
 
-/**
- * @description
- * @author liu66
- * @date 创建时间：2018-6-21
- */
+
 public class RoleAuthChildMenuDTO implements Serializable {
 	private Integer id;
 	private int type;// 父菜单0 子菜单1

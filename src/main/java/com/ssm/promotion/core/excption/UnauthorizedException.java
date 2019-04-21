@@ -1,12 +1,5 @@
 package com.ssm.promotion.core.excption;
 
-/** 
- * @description 未授權
- * @author  chj 
- * @date 创建时间：2018-4-9 下午2:47:35 
- * @version 1.0 
- * @since  
- */
 public class UnauthorizedException extends RuntimeException{
 
 	private static final long serialVersionUID = 1L;

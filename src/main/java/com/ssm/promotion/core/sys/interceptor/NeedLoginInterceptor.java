@@ -14,13 +14,6 @@ import com.ssm.promotion.core.entity.User;
 import com.ssm.promotion.core.service.RoleService;
 import com.ssm.promotion.core.service.UserService;
 
-/**
- * @description
- * @author chj
- * @date 创建时间：2018-4-25 上午10:13:57
- * @version 1.0
- * @since
- */
 public class NeedLoginInterceptor extends HandlerInterceptorAdapter {
 	
 	@Autowired

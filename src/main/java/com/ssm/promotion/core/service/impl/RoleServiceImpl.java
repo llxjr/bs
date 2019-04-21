@@ -13,13 +13,7 @@ import com.ssm.promotion.core.dto.RoleManageDTO;
 import com.ssm.promotion.core.entity.Role;
 import com.ssm.promotion.core.service.RoleService;
 
-/** 
- * @description 
- * @author  chj 
- * @date 创建时间：2018-5-4 上午10:38:34 
- * @version 1.0 
- * @since  
- */
+
 @Service("roleService")
 public class RoleServiceImpl implements RoleService {
 	

@@ -19,9 +19,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.ssm.promotion.core.common.Result;
 import com.ssm.promotion.core.common.ResultGenerator;
 
-/**
- * Created by 13 on 2017/4/7.
- */
+
 @Controller
 @RequestMapping("/images")
 public class LoadImageController {

@@ -7,13 +7,6 @@ import java.util.concurrent.RecursiveTask;
 import java.util.concurrent.atomic.AtomicInteger;
 
 
-/** 
- * @description 
- * @author  chj 
- * @date 创建时间：2018-6-5 下午2:19:14 
- * @version 1.0 
- * @since  
- */
 public class ForkJoinTaskTest {
 	
     private static AtomicInteger seq = new AtomicInteger(0);  

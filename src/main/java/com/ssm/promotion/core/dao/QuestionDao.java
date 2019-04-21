@@ -9,9 +9,8 @@ import com.ssm.promotion.core.entity.User;
 import org.springframework.stereotype.Repository;
 
 /**
- * @author blue
- * @project_name perfect-ssm
- * @date 2018-10-11
+ * @author liu66
+ * 
  */
 @Repository
 public interface QuestionDao {

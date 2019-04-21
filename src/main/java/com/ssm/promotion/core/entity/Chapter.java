@@ -1,7 +1,11 @@
 package com.ssm.promotion.core.entity;
 
 import com.ssm.promotion.core.entity.base.BaseEntity;
-
+/**
+ * 
+ * @author llz
+ *
+ */
 public class Chapter extends BaseEntity {
 	private int id;
 	private int categoryId;

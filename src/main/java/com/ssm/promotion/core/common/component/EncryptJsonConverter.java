@@ -11,13 +11,7 @@ import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.http.converter.HttpMessageNotWritableException;
 import org.springframework.util.StreamUtils;
 
-/** 
- * @description 
- * @author  chj 
- * @date 创建时间：2018-6-4 上午9:48:03 
- * @version 1.0 
- * @since  
- */
+
 public class EncryptJsonConverter extends AbstractHttpMessageConverter<Object>{
 	
 	public EncryptJsonConverter() {

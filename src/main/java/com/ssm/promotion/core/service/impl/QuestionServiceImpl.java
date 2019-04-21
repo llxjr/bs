@@ -37,7 +37,7 @@ import com.ssm.promotion.core.util.StringUtil;
 
 /**
  * @author llz
- * @project_name perfect-ssm
+ * 
  */
 @Service("questionService")
 public class QuestionServiceImpl implements QuestionService {

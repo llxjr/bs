@@ -8,13 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.ssm.promotion.core.dto.RoleManageDTO;
 import com.ssm.promotion.core.entity.Role;
 
-/** 
- * @description 角色管理DAO
- * @author  chj 
- * @date 创建时间：2018-5-4 上午10:27:22 
- * @version 1.0 
- * @since  
- */
+
 @Repository
 public interface RoleDao {
 	

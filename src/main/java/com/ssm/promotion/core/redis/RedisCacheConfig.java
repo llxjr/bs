@@ -12,10 +12,6 @@ import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 
-
-/**
- * Created by 13 on 2017/12/4.
- */
 @Component
 @EnableCaching
 @Configuration

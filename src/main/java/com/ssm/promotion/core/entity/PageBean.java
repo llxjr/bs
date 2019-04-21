@@ -2,8 +2,7 @@ package com.ssm.promotion.core.entity;
 
 /**
  * @author liu66
- * @project_name perfect-ssm
- * @date 2017-3-1
+ * 
  */
 public class PageBean {
 

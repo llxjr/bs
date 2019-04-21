@@ -9,9 +9,8 @@ import com.ssm.promotion.core.entity.Paper;
 import com.ssm.promotion.core.entity.User;
 
 /**
- * @author zpy
- * @project_name perfect-ssm
- * @date 2018-10-10
+ * @author liu66
+ * 
  */
 public interface ChapterService {
 

@@ -5,8 +5,7 @@ import java.util.Date;
 import com.ssm.promotion.core.entity.base.BaseEntity;
 
 /**
- * @description 类目管理
- * @date 2018/10/11
+ * 
  * @author liu66
  *
  */

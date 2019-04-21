@@ -3,9 +3,6 @@ package test;
 import com.ssm.promotion.core.util.MD5Util;
 import org.junit.Test;
 
-/**
- * Created by 13 on 2017/3/30.
- */
 public class simpleTest {
 
     /**

@@ -16,11 +16,8 @@ import com.ssm.promotion.core.entity.User;
 import com.ssm.promotion.core.service.UserService;
 
 /** 
- * @description 
  * @author  liu66 
- * @date 创建时间：2018-6-4 上午10:46:52 
- * @version 1.0 
- * @since  
+ * 
  */
 public class BasicController {
 	

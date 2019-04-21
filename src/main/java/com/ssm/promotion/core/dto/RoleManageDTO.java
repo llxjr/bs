@@ -3,11 +3,6 @@ package com.ssm.promotion.core.dto;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * @description
- * @author liu66
- * @date 创建时间：2018-6-19 
- */
 public class RoleManageDTO implements Serializable {
 	/** pkey */
 	private Integer id;

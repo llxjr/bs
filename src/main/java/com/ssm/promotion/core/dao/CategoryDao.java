@@ -9,7 +9,7 @@ import com.ssm.promotion.core.entity.Category;
 
 /**
  * @author liu66
- * @project_name perfect-ssm
+ * 
  */
 @Repository
 public interface CategoryDao {

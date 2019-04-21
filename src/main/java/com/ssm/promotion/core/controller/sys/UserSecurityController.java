@@ -23,6 +23,7 @@ import com.ssm.promotion.core.util.MD5Util;
 /**
  * @description
  * @author liu66
+ * 
  */
 @Controller
 @RequestMapping("/security/user")

@@ -11,7 +11,7 @@ import com.ssm.promotion.core.entity.Menu;
 /**
  * @description
  * @author liu66
- * @date 创建时间：2018-4-25 下午2:27:57
+ * 
  */
 public interface MenuService {
 	

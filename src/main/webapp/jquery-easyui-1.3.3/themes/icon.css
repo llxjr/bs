@@ -129,7 +129,9 @@
 .icon-home {
     background: url('usericons/home.png') no-repeat center center;
 }
-
+.icon-my_home {
+    background: url('icons/my_home.png') no-repeat center center;
+}
 .icon-ceo {
     background: url('usericons/ceo.png') no-repeat center center;
 }

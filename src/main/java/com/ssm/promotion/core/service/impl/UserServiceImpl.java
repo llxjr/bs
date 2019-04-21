@@ -18,11 +18,6 @@ import com.ssm.promotion.core.service.UserService;
 import com.ssm.promotion.core.util.MD5Util;
 import com.ssm.promotion.core.util.StringUtil;
 
-/**
- * @author 1034683568@qq.com
- * @project_name perfect-ssm
- * @date 2017-3-1
- */
 @Service("userService")
 public class UserServiceImpl implements UserService {
 

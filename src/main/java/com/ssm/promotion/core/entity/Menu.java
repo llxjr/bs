@@ -5,9 +5,7 @@ import com.ssm.promotion.core.entity.base.BaseEntity;
 /**
  * @description 菜单管理
  * @author liu66
- * @date 创建时间：2018-4-25 下午1:48:35
- * @version 1.0
- * @since
+ * 
  */
 public class Menu extends BaseEntity {
 

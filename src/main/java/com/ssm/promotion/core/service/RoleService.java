@@ -6,13 +6,7 @@ import java.util.Map;
 import com.ssm.promotion.core.dto.RoleManageDTO;
 import com.ssm.promotion.core.entity.Role;
 
-/** 
- * @description 
- * @author  chj 
- * @date 创建时间：2018-5-4 上午10:36:15 
- * @version 1.0 
- * @since  
- */
+
 public interface RoleService {
 	
 	/**

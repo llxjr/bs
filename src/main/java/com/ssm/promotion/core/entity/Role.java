@@ -2,13 +2,7 @@ package com.ssm.promotion.core.entity;
 
 import com.ssm.promotion.core.entity.base.BaseEntity;
 
-/**
- * @description 角色管理
- * @author liu66
- * @date 创建时间：2018-5-4 上午10:19:11
- * @version 1.0
- * @since
- */
+
 public class Role extends BaseEntity {
 	
 	/** 等级 */

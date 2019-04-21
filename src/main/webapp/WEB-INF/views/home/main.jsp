@@ -6,27 +6,32 @@
 <%@include file="../common/head.jsp"%>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.3.3/themes/icon.css" />
 <script src="js/common.js"></script>
 <script src="js/home/home.js"></script>
 </head>
 <body class="easyui-layout">
 	<div region="north" style="height: 78px; background-color: #C4E1FF">
-		<table width="100%" style="margin-top:40px">
-			<tr>
-				<td width="50%"></td>
-				<td valign="bottom"
-					style="font-size: 20px; color: #8B8B8B; font-family: '楷体';"
-					align="right" width="50%"><font size="3">&nbsp;&nbsp;<strong>当前管理员：</strong>
-						${userName} </font>【${roleName}】 <a href="javascript:logout()" style="width: 100px;">退出登录</a>&nbsp;&nbsp;</td>
-			</tr>
-		</table>
+	<div style="padding-bottom:2px;float:left;position:relative;"><img alt="" src="images/logo.png"></div>
+		<div>
+			<table width="100%" style="margin-top:40px">
+				<tr>
+					<td width="50%"></td>
+					<td valign="bottom"
+						style="font-size: 20px; color: #8B8B8B; font-family: '楷体';"
+						align="right" width="50%"><font size="3">&nbsp;&nbsp;<strong>当前管理员：</strong>
+							${userName} </font>【${roleName}】 <a href="javascript:logout()" style="width: 100px;">退出登录</a>&nbsp;&nbsp;</td>
+				</tr>
+			</table>
+		</div>
 	</div>
 	<div region="center">
 		<div class="easyui-tabs" fit="true" border="false" id="tabs">
-			<div title="首页" data-options="iconCls:'icon-home'">
+			 <div title="首页" data-options="iconCls:'icon-home'">
 				<div align="center" style="padding-top: 50px">
 					<font color="grey" size="10">我的后台管理系统</font>
 				</div>
+				<div><img alt="" src="images/index_banner.jpg"></div>
 			</div>
 		</div>
 	</div>

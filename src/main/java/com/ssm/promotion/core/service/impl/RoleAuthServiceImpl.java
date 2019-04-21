@@ -16,13 +16,6 @@ import com.ssm.promotion.core.entity.Menu;
 import com.ssm.promotion.core.entity.RoleMenu;
 import com.ssm.promotion.core.service.RoleAuthService;
 
-/**
- * @description
- * @author chj
- * @date 创建时间：2018-6-22 上午10:47:25
- * @version 1.0
- * @since
- */
 @Service
 public class RoleAuthServiceImpl implements RoleAuthService {
 

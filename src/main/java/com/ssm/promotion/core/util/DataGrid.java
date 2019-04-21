@@ -4,13 +4,6 @@ import java.io.Serializable;
 
 import net.sf.json.JSONArray;
 
-/**
- * @description datagrid封装
- * @author chj
- * @date 创建时间：2018-5-7 上午9:13:53
- * @version 1.0
- * @since
- */
 public class DataGrid implements Serializable {
 
 	private Long total;

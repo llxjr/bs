@@ -9,11 +9,9 @@ import org.springframework.stereotype.Repository;
 import com.ssm.promotion.core.entity.Menu;
 
 /** 
- * @description 
+ * 
  * @author  liu66 
- * @date 创建时间：2018-4-25 下午2:06:19 
- * @version 1.0 
- * @since  
+ * 
  */
 @Repository
 public interface MenuDao {

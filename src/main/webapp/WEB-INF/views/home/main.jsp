@@ -27,7 +27,7 @@
 	</div>
 	<div region="center">
 		<div class="easyui-tabs" fit="true" border="false" id="tabs">
-			 <div title="首页" data-options="iconCls:'icon-home'">
+			 <div title="首页" data-options="iconCls:'icon-my_home'">
 				<div align="center" style="padding-top: 50px">
 					<font color="grey" size="10">我的后台管理系统</font>
 				</div>

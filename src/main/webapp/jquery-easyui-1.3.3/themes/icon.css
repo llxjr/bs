@@ -3,17 +3,19 @@
 }
 
 .icon-add {
-    background: url('icons/edit_add.png') no-repeat center center;
+    background: url('icons/my_edit_add.png') no-repeat center center;
 }
 
 .icon-edit {
-    background: url('icons/pencil.png') no-repeat center center;
+    background: url('icons/my_pencil.png') no-repeat center center;
 }
 
 .icon-remove {
     background: url('icons/edit_remove.png') no-repeat center center;
 }
-
+.icon-my_remove {
+    background: url('icons/edit_remove.png') no-repeat center center;
+}
 .icon-save {
     background: url('icons/filesave.png') no-repeat center center;
 }
@@ -39,7 +41,7 @@
 }
 
 .icon-search {
-    background: url('icons/search.png') no-repeat center center;
+    background: url('icons/my_search.png') no-repeat center center;
 }
 
 .icon-print {
@@ -101,7 +103,9 @@
 .icon-kaoyan {
     background: url('usericons/kaoyan.png') no-repeat center center;
 }
-
+.icon-my_role {
+    background: url('usericons/my_role.png')no-repeat center center;
+}
 .icon-qita {
     background: url('usericons/qita.png') no-repeat center center;
 }
@@ -121,6 +125,11 @@
 .icon-item {
     background: url('usericons/xitong.png') no-repeat center center;
 }
+
+.icon-my_item {
+    background: url('usericons/my_tool.png') no-repeat center center;
+}
+
 
 .icon-shuji {
     background: url('usericons/shuguan.png') no-repeat center center;
@@ -210,6 +219,22 @@
 
 .icon-shuben {
     background: url('usericons/shuben.png') no-repeat center center;
+}
+
+.icon-my_shuben {
+    background: url('usericons/my_shuben.png') no-repeat center center;
+}
+
+.icon-my_shuben1 {
+    background: url('usericons/my_shuben1.png') no-repeat center center;
+}
+
+.icon-my_zhangjie {
+    background: url('usericons/my_zhangjie.png') no-repeat center center;
+}
+
+.icon-my_menu {
+    background: url('usericons/my_menu.png') no-repeat center center;
 }
 
 .icon-khlsgl {
@@ -330,6 +355,9 @@
 .icon-userh {
     background: url('usericons/userh.png') no-repeat center center;
 }
+.icon-my_user {
+    background: url('usericons/my_user.png') no-repeat center center;
+}
 
 .icon-ruku {
     background: url('usericons/ruku.png') no-repeat center center;
@@ -359,12 +387,44 @@
     background: url('usericons/guanliyuan.png') no-repeat center center;
 }
 
+.icon-my_lxr {
+    background: url('usericons/my_guanliyuan.png') no-repeat center center;
+}
+
 .icon-jwjl {
     background: url('usericons/jwjl.png') no-repeat center center;
 }
 
 .icon-wenzhangs {
     background: url('usericons/wenzhangs.png') no-repeat center center;
+}
+
+.icon-my_wenzhangs {
+    background: url('usericons/my_wenzhang.png') no-repeat center center;
+}
+
+.icon-my_leimu0 {
+    background: url('usericons/my_leimu0.png') no-repeat center center;
+}
+
+.icon-my_leimu1 {
+    background: url('usericons/my_leimu1.png') no-repeat center center;
+}
+
+.icon-my_wenzhang1 {
+    background: url('usericons/my_wenzhang1.png') no-repeat center center;
+}
+
+.icon-my_tiku1 {
+    background: url('usericons/my_tiku1.png') no-repeat center center;
+}
+
+.icon-my_tiku0 {
+    background: url('usericons/my_tiku0.png') no-repeat center center;
+}
+
+.icon-my_daan {
+    background: url('usericons/my_daan.png') no-repeat center center;
 }
 
 .icon-reset {

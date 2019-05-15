@@ -20,7 +20,7 @@
 				iconCls="icon-remove" plain="true">删除</a>
 		</div>
 		<div>
-			&nbsp;课程名：&nbsp;<input type="text" id="c_courseName" size="20"
+			&nbsp;章节名：&nbsp;<input type="text" id="c_courseName" size="20"
 				onkeydown="if(event.keyCode==13) searchChapter()" /> <a
 				href="javascript:searchChapter()" class="easyui-linkbutton"
 				iconCls="icon-search" plain="true">搜索</a>

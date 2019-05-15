@@ -57,6 +57,10 @@ public interface CategoryService {
      */
 	public List<CategoryParentChildDTO> findParentCategory();
     
-
+	/**
+     * 父目录列表
+     * @return
+     */
+	public List<Category> findChildCategory();
    
 }

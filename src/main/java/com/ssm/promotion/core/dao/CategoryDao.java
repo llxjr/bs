@@ -60,6 +60,12 @@ public interface CategoryDao {
 	public List<Category> findPatentCategory();
 	
 	/**
+	 * 获取子类目
+	 * @return
+	 */
+	public List<Category> findChildCategory();
+	
+	/**
 	 * 查找全部类目
 	 * @return
 	 */
@@ -78,7 +84,8 @@ public interface CategoryDao {
 	 * @return
 	 */
 	public int updatePCategoryHasChildToOne(int parentId);
-
+	
+	
 	/**
 	 * 设置父类目的has_child为1
 	 * @param parentId

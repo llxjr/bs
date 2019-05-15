@@ -140,8 +140,14 @@
     	select 
     	<include refid="Base_Column_List"/>
     	from qf_category
-    	where qf_category.`level` &lt;3
+    	where parent_id = 0
     </select>
     
+    <select id="findChildCategory" resultMap="CategoryResult">
+    	select 
+    	<include refid="Base_Column_List"/>
+    	from qf_category
+    	where parent_id not like 0
+    </select>
     
 </mapper> 

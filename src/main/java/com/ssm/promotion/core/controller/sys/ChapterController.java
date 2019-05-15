@@ -38,7 +38,6 @@ import com.ssm.promotion.core.entity.Course;
 import com.ssm.promotion.core.entity.PageBean;
 import com.ssm.promotion.core.entity.Paper;
 import com.ssm.promotion.core.entity.User;
-import com.ssm.promotion.core.redis.RedisUtil;
 import com.ssm.promotion.core.service.ChapterService;
 import com.ssm.promotion.core.service.CourseService;
 import com.ssm.promotion.core.service.UserService;

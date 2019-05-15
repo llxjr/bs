@@ -44,10 +44,6 @@ $(function() {
 									title : '标签',
 									width : 110
 								}, {
-									field : 'level',
-									title : '目录等级',
-									width : 50
-								}, {
 									field : 'createTime',
 									title : '创建时间',
 									width : 160,

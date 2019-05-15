@@ -35,7 +35,6 @@ import com.ssm.promotion.core.entity.Category;
 import com.ssm.promotion.core.entity.Menu;
 import com.ssm.promotion.core.entity.PageBean;
 import com.ssm.promotion.core.entity.User;
-import com.ssm.promotion.core.redis.RedisUtil;
 import com.ssm.promotion.core.service.CategoryService;
 import com.ssm.promotion.core.util.DataGrid;
 import com.ssm.promotion.core.util.ResponseUtil;
@@ -53,8 +52,6 @@ public class CategoryController extends BasicController {
 
 	@Resource
 	private CategoryService categoryService;
-	@Autowired
-	private RedisUtil redisUtil;
 
 	private static final Logger log = Logger.getLogger(CategoryController.class);// 日志文件
 	
@@ -185,4 +182,9 @@ public class CategoryController extends BasicController {
 		return categoryService.findAllCategory();
 	}
 
+	@RequestMapping(value="findChildCategory", method = RequestMethod.POST)
+	@ResponseBody
+	public List<Category> findChildCategory(){
+		return categoryService.findChildCategory();
+	}
 }

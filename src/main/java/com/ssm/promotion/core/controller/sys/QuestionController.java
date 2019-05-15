@@ -36,7 +36,6 @@ import com.ssm.promotion.core.entity.Category;
 import com.ssm.promotion.core.entity.PageBean;
 import com.ssm.promotion.core.entity.Question;
 import com.ssm.promotion.core.entity.User;
-import com.ssm.promotion.core.redis.RedisUtil;
 import com.ssm.promotion.core.service.QuestionService;
 import com.ssm.promotion.core.service.UserService;
 import com.ssm.promotion.core.util.MD5Util;

@@ -138,4 +138,9 @@ public class CategoryServiceImpl implements CategoryService {
 		return dtos;
 	}
 
+	@Override
+	public List<Category> findChildCategory() {
+		return categoryDao.findChildCategory();
+	}
+
 }

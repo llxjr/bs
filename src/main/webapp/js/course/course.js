@@ -270,7 +270,7 @@ function deleteCourse() {
 function getCategory(){
 	$.ajax({
         type:"post",
-        url:'qf/category/findAllCategory',//访问后台去数据库查询select的选项
+        url:'qf/category/findChildCategory',//访问后台去数据库查询select的选项
         success:function(categorise){
             var categorySelect=document.getElementById("categoryId"); //页面上的<html:select>元素
         	categorySelect.options.add(new Option("",""));
